@@ -32,7 +32,7 @@ public class Main {
         // key - должен быть уникаленю value -  может повторяться
         HashMap<Integer,String> phones= new HashMap<>();
          // добавление элементов
-        phones.put(1200,"Tolian");
+        phones.put(3200,"Tolian");
         phones.put(1200, "Vovan");
         phones.put (7301, "Andon");
         System.out.println(phones);
@@ -52,6 +52,10 @@ public class Main {
         System.out.println(phones.get(2200));
         System.out.println(phones.getOrDefault(2200,"Ops!!"));
         System.out.println(phones.getOrDefault(1200,"Ops!!"));
+        // Удаление значений
+        phones.remove(1200);
+        phones.remove(3200,"Tolian");
+        System.out.println(phones);
         // дана строка произвольной длинны, содержащая только латинские символы.
         // вывести на экран количество повторений каждого символа в строке
         String s= "kpokpokpo";
