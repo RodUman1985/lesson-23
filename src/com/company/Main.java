@@ -1,9 +1,7 @@
 package com.company;
 
 import java.sql.SQLOutput;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
@@ -11,7 +9,7 @@ public class Main {
 	// HashSet -  коллекция клторая хранит уникальные значения
         // коллекции типа Hash** при сравнении элементов вначале  выызвается метод equalse, и только потом hash - код
         //
-        HashSet <String> set = new HashSet<>();
+   /*     HashSet <String> set = new HashSet<>();
         set.add("Imperor");
         set.add("protects!!!");
         set.add("Imperor");
@@ -63,6 +61,44 @@ public class Main {
         for(char c: s.toCharArray()){
             chars.put(c,chars.getOrDefault(c,0)+1);
                     }
-        System.out.println(chars);
+        System.out.println(chars);*/
+        // создание своей коллекции
+       TenetList<Integer> tList = new TenetList<>();
+        tList.add(1);
+        tList.add(2);
+        tList.add(3);
+        tList.add(4);
+        tList.add(5);
+        tList.add(6);
+        tList.add(7);
+        tList.add(8);
+        tList.add(9);
+        tList.add(10);
+        System.out.println(tList);
+        for(int i=0;i < tList.size();i++){
+            System.out.print("  "+tList.get(i));
+        }
+        System.out.println();
+        System.out.println("_______________________________________________");
+        // при старте, цикл for Ech вызывает у  объекта коллекции метод Iterator
+        for(int e:tList){
+            System.out.print("  "+e);
+        }
+        System.out.println();
+        System.out.println("-----------------------------------------------");
+        // сортировка коллекций
+      LinkedList<Cat> catList = new LinkedList<>();
+      catList.add( new Cat(1, "Nik"));
+        catList.add( new Cat(2, "Tom"));
+        catList.add( new Cat(3, "Kik"));
+        catList.add( new Cat(4, "Pik"));
+        Collections.sort(catList);
+        System.out.println(catList);
+        Collections.sort(catList,new Cat.CateratorName());
+        System.out.println(catList);
+        Collections.sort(catList,new Cat.CateratorID());
+        System.out.println(catList);
+        Collections.sort(catList,new Cat.CateratorID(false));
+        System.out.println(catList);
     }
 }
